@@ -1,9 +1,9 @@
 var expect = require('chai').expect,
-  ApartmentBuilding = require('./../../src/propertyTypes/apartmentBuilding'),
-  Unit = require('./../../src/unit'),
-  Manager = require('./../../src/people/manager'),
-  Tenant = require('./../../src/people/tenant'),
-  Person = require('./../../src/people/person');
+    ApartmentBuilding = require('./../../src/propertyTypes/apartmentBuilding'),
+    Unit = require('./../../src/unit'),
+    Manager = require('./../../src/people/manager'),
+    Tenant = require('./../../src/people/tenant'),
+    Person = require('./../../src/people/person');
 
 describe('ApartmentBuilding', function(){
   var terraces = new ApartmentBuilding('Terraces', '66 7th Street'),
@@ -27,14 +27,6 @@ describe('ApartmentBuilding', function(){
   describe('#getManager', function() {
     it ('should return the manager', function() {
       expect(terraces.getManager()).to.eql(bob);
-    });
-  });
-
-  describe('#addUnit', function() {
-    it ('should add new unit', function() {
-      terraces.addUnit(unit1);
-      terraces.addUnit(unit2);
-      expect(terraces.units).to.eql([unit1, unit2]);
     });
   });
 
