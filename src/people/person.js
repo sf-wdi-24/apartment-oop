@@ -1,5 +1,5 @@
 function Person(name, contact) {
-  // set properties using `this`
+  // set attributes (name, contact) using `this`
 }
 
 module.exports = Person;

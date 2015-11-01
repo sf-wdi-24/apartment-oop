@@ -1,4 +1,4 @@
-var Person = require('./person');
+var Person = require('./person'),
     Property = require('./../propertyTypes/property');
 
 function Manager(name, contact) {
