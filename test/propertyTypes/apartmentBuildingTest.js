@@ -8,26 +8,25 @@ var expect = require('chai').expect,
 describe('ApartmentBuilding', function(){
   var terraces = new ApartmentBuilding('Terraces', '66 7th Street'),
       unit1 = new Unit(564, terraces, 700, 2000),
-      unit2 = new Unit(332, terraces, 700, 2000),
-      bob = new Manager('Bob Brannan', '555-555-555'),
+      unit2 = new Unit(332, terraces, 700, 2000);
+
+  terraces.units.push(unit1, unit2);
+
+  var bob = new Manager('Bob Brannan', '555-555-555'),
       jane = new Tenant('Jane Davis', '555-555-555'),
       jill = new Person('Jill Taylor', '555-555-5555'),
       carl = new Person('Carl Jones', '555-555-5555');
 
-  it ('should initially have no units', function() {
-    expect(terraces.units).to.eq([]);
-  });
-
   describe('#setManager', function() {
     it ('should set the manager', function() {
       terraces.setManager(bob);
-      expect(terraces.manager).to.eq(bob);
+      expect(terraces.manager).to.eql(bob);
     });
   });
 
   describe('#getManager', function() {
     it ('should return the manager', function() {
-      expect(terraces.getManager()).to.eq(bob);
+      expect(terraces.getManager()).to.eql(bob);
     });
   });
 
@@ -35,7 +34,7 @@ describe('ApartmentBuilding', function(){
     it ('should add new unit', function() {
       terraces.addUnit(unit1);
       terraces.addUnit(unit2);
-      expect(terraces.units).to.eq([unit1, unit2]);
+      expect(terraces.units).to.eql([unit1, unit2]);
     });
   });
 
@@ -44,26 +43,26 @@ describe('ApartmentBuilding', function(){
       jane.addReference(jill);
       jane.addReference(carl);
       terraces.addTenant(unit1, jane);
-      expect(unit1.tenant).to.eq(jane);
+      expect(unit1.tenant).to.eql(jane);
     });
   });
 
   describe('#removeTenant', function() {
     it ('should remove an existing tenant from a unit', function() {
       terraces.removeTenant(unit1, jane);
-      expect(unit1.tenant).to.eq(null);
+      expect(unit1.tenant).to.eql(null);
     });
   });
 
   describe('#availableUnits', function() {
     it ('should return the number of available units', function() {
-      expect(terraces.availableUnits()).to.eq(2);
+      expect(terraces.availableUnits()).to.eql(2);
     });
   });
 
   describe('#rentedUnits', function() {
     it ('should return the number of rented units', function() {
-      expect(terraces.rentedUnits()).to.eq(0);
+      expect(terraces.rentedUnits()).to.eql(0);
     });
   });
 
