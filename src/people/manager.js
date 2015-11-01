@@ -6,6 +6,8 @@ function Manager(name, contact) {
   // set attributes (name, contact) using `this`
 }
 
+// Manager inherits from Person
+
 Manager.prototype.addApartment = function(apartment) {
   // add apartment to manager's apartments
 };

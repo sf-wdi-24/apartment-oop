@@ -5,6 +5,8 @@ function Tenant(name, contact) {
   // set attributes (name, contact) using `this`
 }
 
+// Tenant inherits from Person
+
 Tenant.prototype.addReference = function(reference) {
   // add reference (which is instance of `Person`) to tenant's references
 };
