@@ -4,8 +4,7 @@ var Person = require('./person'),
 function Manager(name, contact) {
   this.properties = [];
   // set attributes (name, contact) using `this`
-  this.name = name;
-  this.contact = contact;
+  Person.call(this, name, contact);
 }
 
 Manager.prototype = new Person();
