@@ -56,11 +56,6 @@ Property.prototype.availableUnits = function() {
     }
   });
   return availableUnits;
-
-  // OR
-  // return this.units.filter(function(unit) {
-  //   return unit.available();
-  // });
 };
 
 Property.prototype.rentedUnits = function() {
@@ -72,11 +67,6 @@ Property.prototype.rentedUnits = function() {
     }
   });
   return rentedUnits;
-
-  // OR
-  // return this.units.filter(function(unit) {
-  //   return !unit.available();
-  // });
 };
 
 module.exports = Property;
