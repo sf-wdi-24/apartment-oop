@@ -3,6 +3,7 @@ var Manager = require('./../people/manager'),
     Unit = require('./../unit');
 
 function Property(address) {
+  this.manager = null;
   this.units = [];
   // set properties using `this`
   this.address = address;
