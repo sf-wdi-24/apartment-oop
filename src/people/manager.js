@@ -1,12 +1,15 @@
-var Person = require('./person'),
-    Apartment = require('./../apartment'),
-    inherits = require('./../inherits');
-
 function Manager(name, contact) {
   this.apartments = [];
   // set attributes (name, contact) using `this`
   Person.call(this, name, contact);
 }
+
+module.exports = Manager;
+
+var Person = require('./person'),
+    Apartment = require('./../apartment'),
+    inherits = require('./../inherits');
+
 
 // Manager inherits from Person
 inherits(Manager, Person);
@@ -14,7 +17,7 @@ inherits(Manager, Person);
 Manager.prototype.addApartment = function(apartment) {
   // add apartment to manager's apartments
   if (apartment instanceof Apartment) {
-    this.apartment.push(apartment);
+    this.apartments.push(apartment);
   } else {
     console.error("Failed to add apartment:", apartment);
   }
@@ -31,5 +34,3 @@ Manager.prototype.removeApartment = function(apartment) {
   }
   return this;
 };
-
-module.exports = Manager;

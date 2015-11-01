@@ -1,12 +1,14 @@
-var Manager = require('./people/manager'),
-    Tenant = require('./people/tenant'),
-    Unit = require('./unit');
-
 function Apartment(address) {
   this.manager = null;
   this.units = [];
   this.address = address;
 }
+
+module.exports = Apartment;
+
+var Manager = require('./people/manager'),
+    Tenant = require('./people/tenant'),
+    Unit = require('./unit');
 
 Apartment.prototype.setManager = function(manager) {
   // if `manager` is an instance of `Manager`
@@ -68,5 +70,3 @@ Apartment.prototype.rentedUnits = function() {
   });
   return rentedUnits;
 };
-
-module.exports = Apartment;
