@@ -3,9 +3,7 @@ var Person = require('./people/person'),
     Tenant = require('./people/tenant');
 
 var Property = require('./propertyTypes/property'),
-    ApartmentBuilding = require('./propertyTypes/apartmentBuilding'),
-    Duplex = require('./propertyTypes/duplex'),
-    TownHouse = require('./propertyTypes/townHouse');
+    ApartmentBuilding = require('./propertyTypes/apartmentBuilding');
 
 var Unit = require('./unit');
 
@@ -20,8 +18,6 @@ App.Tenant = Tenant;
 // add properties to apartment module
 App.Property = Property;
 App.ApartmentBuilding = ApartmentBuilding;
-App.Duplex = Duplex;
-App.TownHouse = TownHouse;
 
 // add unit to apartment module
 App.Unit = Unit;
