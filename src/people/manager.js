@@ -1,8 +1,8 @@
 var Person = require('./person'),
-    Property = require('./../propertyTypes/property');
+    Apartment = require('./../apartment');
 
 function Manager(name, contact) {
-  this.properties = [];
+  this.apartments = [];
   // set attributes (name, contact) using `this`
   Person.call(this, name, contact);
 }
@@ -10,23 +10,23 @@ function Manager(name, contact) {
 Manager.prototype = new Person();
 Manager.prototype.constructor = Manager;
 
-Manager.prototype.addProperty = function(property) {
-  // add property to manager's properties
-  if (property instanceof Property) {
-    this.properties.push(property);
+Manager.prototype.addApartment = function(apartment) {
+  // add apartment to manager's apartments
+  if (apartment instanceof Apartment) {
+    this.apartment.push(apartment);
   } else {
-    console.error("Failed to add property:", property);
+    console.error("Failed to add apartment:", apartment);
   }
   return this;
 };
 
-Manager.prototype.removeProperty = function(property) {
-  // remove property from manager's properties
-  var indexOfProperty = this.properties.indexOf(property);
-  if(indexOfProperty > -1) {
-    this.properties.splice(indexOfProperty, 1);
+Manager.prototype.removeApartment = function(apartment) {
+  // remove apartment from manager's apartments
+  var indexOfApartment = this.apartments.indexOf(apartment);
+  if(indexOfApartment > -1) {
+    this.apartments.splice(indexOfApartment, 1);
   } else {
-    console.error("Failed to remove property:", property);
+    console.error("Failed to remove apartment:", apartment);
   }
   return this;
 };
