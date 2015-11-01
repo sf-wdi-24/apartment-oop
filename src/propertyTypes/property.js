@@ -50,7 +50,7 @@ Property.prototype.removeTenant = function(unit, tenant) {
 Property.prototype.availableUnits = function() {
   // return num of available units
   var availableUnits = 0;
-  this.units.each(function(unit) {
+  this.units.forEach(function(unit) {
     if (unit.available()) {
       availableUnits += 1;
     }
@@ -66,7 +66,7 @@ Property.prototype.availableUnits = function() {
 Property.prototype.rentedUnits = function() {
   // return num of rented units
   var rentedUnits = 0;
-  this.units.each(function(unit) {
+  this.units.forEach(function(unit) {
     if (!unit.available()) {
       rentedUnits += 1;
     }
