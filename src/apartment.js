@@ -10,6 +10,7 @@ var Manager = require('./people/manager'),
     Tenant = require('./people/tenant'),
     Unit = require('./unit');
 
+
 Apartment.prototype.setManager = function(manager) {
   // if `manager` is an instance of `Manager`
   // set `this.manager` to `manager`
