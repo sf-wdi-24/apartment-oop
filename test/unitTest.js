@@ -1,9 +1,9 @@
 var expect = require('chai').expect,
     Unit = require('./../src/unit.js'),
-    Property = require('./../src/propertyTypes/property.js');
+    Apartment = require('./../src/apartment');
 
 describe('Unit', function() {
-  var avalon = new Property('555 5th Street'),
+  var avalon = new Apartment('555 5th Street'),
       unit = new Unit(236, avalon, 500, 1500);
 
   it ('should initially be empty', function() {

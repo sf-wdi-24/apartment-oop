@@ -1,11 +1,11 @@
 var expect = require('chai').expect,
-    Apartment = require('./../../src/apartment'),
-    Unit = require('./../../src/unit'),
-    Manager = require('./../../src/people/manager'),
-    Tenant = require('./../../src/people/tenant'),
-    Person = require('./../../src/people/person');
+    Apartment = require('./../src/apartment'),
+    Unit = require('./../src/unit'),
+    Manager = require('./../src/people/manager'),
+    Tenant = require('./../src/people/tenant'),
+    Person = require('./../src/people/person');
 
-describe('Apartment', function(){
+describe('Apartment', function() {
   var terraces = new Apartment('Terraces', '66 7th Street'),
       unit1 = new Unit(564, terraces, 700, 2000),
       unit2 = new Unit(332, terraces, 700, 2000);
