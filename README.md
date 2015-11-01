@@ -1,144 +1,61 @@
-# ApartmentRental App
-## Working with Relationships and Inheritance
+# <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="60"> Apartment Rental App
 
-### Description
+**Objective:** Model functionality for an apartment rental app using object constructors, prototypes, and inheritance.
 
-In this application we have three main types of things we are dealing with.
+## Minimum Requirements
 
-* `Person`
-* `Property`
-* `Unit`
+* Implement constructors and prototype methods for `Person`, `Manager`, `Tenant`, `Property`, `ApartmentBuilding`, and `Unit` (see starter code in those files)
+* Implement the prototypal inheritance for the following:
+  * `Manager` inherits from `Person`
+  * `Tenant` inherits from `Person`
+* Make sure all tests are passing (to run tests, type `npm test` in your Terminal)
 
+## Bonus
 
-#### Person
+* Create a new file `src/inherits.js` and implement an `inherits` function:
 
-With `Person` we have two main subtypes:
+  ```js
+  var inherits = function(Child, Parent) {
+    Child.prototype = new Parent();
+    Child.prototype.constructor = Child;
+  };
 
-* `Manager`
-* `Tenant`
+  module.exports = inherits;
+  ```
 
-Both `Manager` and `Tenant` should *inherit* methods from `Person`, and implement any extra behavior they need to play their role in the App.
+  Then require the `inherits` module in each file that require inheritance, and use the function to DRY up your code.
 
-##### Relationships
-
-* `Manager` has many `properties`
-* `Tenant` has a many `references` that are just `Person` instances with contact info. 
-
-#### Property
-
-With `Property` we have three property types `Duplex`, `TownHouse`, and `ApartmentBuilding`. A generic `Property` should always have a `Manager` before `tenants` can move in. All `Tenants` should have `two` references before moving in.
-
-##### Relationships
-
-The following should have the everything a `Property` has and also.
-
-* `Duplex` has only two `Unit`s.
-* `TownHouse` has only one `Unit`.
-* `ApartmentBuilding` has many `Unit`s.
-
-
-#### `Unit`
-
-There is only one type of `Unit`.
-
-* A `Unit` belongs to one `Property` and has one `Tenant`.
-
+* Write more tests! You'll find some simple tests in the `test` sub-directory. Once you have all the tests passing, try adding a couple more for edge cases. For example:
 
 ## Getting Started
 
+1. Fork this repo, and clone it into your `develop` folder on your local machine.
+
+2. Change directories into `apartment-oop`, and run `npm install` in your Terminal. This installs the testing modules (`mocha` and `chai`) locally into your project repo.
+
+3. Instructions for implementing each module are in their respective files, so poke around in `person.js`, `manager.js`, `tenant.js`, `property.js`, `ApartmentBuilding.js`, and `unit.js`. Read the comments to guide your implementation.
+
 ### Playing In Console
 
-`Locus` is fine, but let's try to avoid it in this application.
+The `main.js` file is set up to allow you to test your models in the node REPL.
 
-* Open the node REPL and `require('./src/main.js')`
+* Open the node REPL and `require('./src/main.js')`:
 
-```
-$ node
-> var app = require('./src/main.js')
-```
+  ```zsh
+  ➜  node
+  > var app = require('./src/main.js');
+  ```
 
-* Play with a `Person` object.
+* Create a new instance of `Person`:
 
-```
-> var Person = app.Person;
-> var john = new Person("john doe", "123-4567");
-> john.contact
-"123-4567"
-```
-============
+  ```zsh
+  > var Person = app.Person;
+  > var john = new Person('John Doe', '123-456-7890');
+  > john.contact
+  '123-456-7890'
+  ```
 
-###  Play with Other Modules
+## Submission
 
-You can do the same thing to play with `app.Property`, `app.Manager`, `app.Tenant`, `app.ApartmentBuilding`, et cetera.
-
-
-============
-
-* Next start implementing inheritance for a `manager`
-
-
-You could do the following:
-
-```
-var person = require("./person");
-
-function Manager(name, contact) {
-  this.name = name;
-  this.contact = contact;
-  this.properties = [];
-}
-
-// Inheriting
-Manager.prototype = new Person();
-Manager.prototype.constructor = Manager;
-
-```
-But the following makes use of a cool `call` method you can use with functions that avoids a bunch extra work.
-
-```
-var person = require("./person");
-
-function Manager(name, contact) {
-
-  // Note here the use of "call"
-  //  which will run the method 
-  //  with a context.
-  Person.call(this, name, contact);
-  this.properties = [];
-}
-
-// Inheriting
-Manager.prototype = new Person();
-Manager.prototype.constructor = Manager;
-
-```
-
-* Note you might want to think about writing an `inherits` function as follows:
-
-`src/inherits`
-
-```
-// write the following
-var inherits = function(Child, Parent) {
-  Child.prototype = new Parent();
-  Child.prototype.constructor = Child;
-};
-
-module.exports = inherits;
-```
-
-you can then require the `inherits` module in each file that require inheritance.
-
-
-
-## Writing Tests
-
-We will use this as part of review opportunity for testing, so try to write as some tests for this project.
-
-There are some `test` stubs for `test/people/`,  `test/property_types/`, and `test/unit.js`. To run these tests run the following in terminal.
-
-* `mocha test/` to run the files in the `test/folder`, i.e. `unit_test.js` 
-* `mocha test/people/` to test the `people` subfolder
-* `mocha test/property_types/` to test the `property_types` subfolder
-
-
+* As you make code changes, frequently commit and push to GitHub.
+* Once you've finished the assignment and pushed your work to GitHub, make a pull request from your fork to the original repo.
