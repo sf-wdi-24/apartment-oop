@@ -1,4 +1,5 @@
-var Person = require('./person');
+var Person = require('./person'),
+    inherits = require('./../inherits');
 
 function Tenant(name, contact) {
   this.references = [];
@@ -7,8 +8,7 @@ function Tenant(name, contact) {
 }
 
 // Tenant inherits from Person
-Tenant.prototype = new Person();
-Tenant.prototype.constructor = Tenant;
+inherits(Tenant, Person);
 
 Tenant.prototype.addReference = function(reference) {
   // add reference (which is instance of `Person`) to tenant's references

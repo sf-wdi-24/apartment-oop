@@ -1,5 +1,6 @@
 var Person = require('./person'),
-    Apartment = require('./../apartment');
+    Apartment = require('./../apartment'),
+    inherits = require('./../inherits');
 
 function Manager(name, contact) {
   this.apartments = [];
@@ -8,8 +9,7 @@ function Manager(name, contact) {
 }
 
 // Manager inherits from Person
-Manager.prototype = new Person();
-Manager.prototype.constructor = Manager;
+inherits(Manager, Person);
 
 Manager.prototype.addApartment = function(apartment) {
   // add apartment to manager's apartments
