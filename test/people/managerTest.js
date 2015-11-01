@@ -11,14 +11,14 @@ describe('Manager', function() {
   });
 
   describe('#addApartment', function() {
-    it ('should add new property', function() {
+    it ('should add new apartment', function() {
       bob.addApartment(avalon);
       expect(bob.apartments).to.eql([avalon]);
     });
   });
 
   describe('#removeApartment', function() {
-    it ('should remove the property', function() {
+    it ('should remove the apartment', function() {
       bob.removeApartment(avalon);
       expect(bob.apartments).to.eql([]);
     });
