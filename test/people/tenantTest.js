@@ -7,13 +7,13 @@ describe('Tenant', function() {
       jill = new Person('Jill Taylor', '555-555-5555');
 
   it ('should initially have no references', function() {
-    expect(jane.references).to.eq([]);
+    expect(jane.references).to.eql([]);
   });
 
   describe('#addReference', function() {
     it ('should add new reference', function() {
       jane.addReference(jill);
-      expect(jane.references).to.eq([jill]);
+      expect(jane.references).to.eql([jill]);
     });
   });
 
