@@ -10,16 +10,16 @@ describe('Manager', function() {
     expect(bob.apartments).to.eql([]);
   });
 
-  describe('#addProperty', function() {
+  describe('#addApartment', function() {
     it ('should add new property', function() {
-      bob.addProperty(avalon);
+      bob.addApartment(avalon);
       expect(bob.apartments).to.eql([avalon]);
     });
   });
 
-  describe('#removeProperty', function() {
+  describe('#removeApartment', function() {
     it ('should remove the property', function() {
-      bob.removeProperty(avalon);
+      bob.removeApartment(avalon);
       expect(bob.apartments).to.eql([]);
     });
   });
