@@ -1,17 +1,17 @@
 var Person = require('./person'),
-    Property = require('./../propertyTypes/property');
+    Apartment = require('./../apartment');
 
 function Manager(name, contact) {
-  this.properties = [];
+  this.apartments = [];
   // set attributes (name, contact) using `this`
 }
 
-Manager.prototype.addProperty = function(property) {
-  // add property to manager's properties
+Manager.prototype.addApartment = function(apartment) {
+  // add apartment to manager's apartments
 };
 
-Manager.prototype.removeProperty = function(property) {
-  // remove property from manager's properties
+Manager.prototype.removeApartment = function(apartment) {
+  // remove apartment from manager's apartments
 };
 
 module.exports = Manager;

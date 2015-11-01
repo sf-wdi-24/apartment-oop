@@ -1,6 +1,6 @@
 function Unit(number, building, sqft, rent) {
   this.tenant = null;
-  // set properties using `this`
+  // set attributes (number, building, sqft, rent) using `this`
 }
 
 Unit.prototype.available = function() {
