@@ -6,6 +6,7 @@ function Tenant(name, contact) {
   Person.call(this, name, contact);
 }
 
+// Tenant inherits from Person
 Tenant.prototype = new Person();
 Tenant.prototype.constructor = Tenant;
 

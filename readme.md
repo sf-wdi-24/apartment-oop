@@ -1,14 +1,14 @@
 # <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="60"> Apartment Rental App
 
-**Objective:** Model functionality for an apartment rental app using object constructors, prototypes, and inheritance.
+**Objective:** Model functionality for an apartment rental app using JavaScript object constructors, prototypes, and inheritance.
 
 ## Minimum Requirements
 
-* Implement constructors and prototype methods for `Person`, `Manager`, `Tenant`, `Property`, `ApartmentBuilding`, and `Unit` (see starter code in those files)
-* Implement the prototypal inheritance for the following:
+* Implement constructors and prototype methods for `Person`, `Manager`, `Tenant`, `Apartment`, and `Unit` (see starter code in those files).
+* Implement prototypal inheritance for the following:
   * `Manager` inherits from `Person`
   * `Tenant` inherits from `Person`
-* Make sure all tests are passing (to run tests, type `npm test` in your Terminal)
+* Make sure all tests are passing (to run tests, type `npm test` in your Terminal).
 
 ## Bonus
 
@@ -23,9 +23,11 @@
   module.exports = inherits;
   ```
 
-  Then require the `inherits` module in each file that require inheritance, and use the function to DRY up your code.
+  Then require the `inherits` module in each file that require inheritance, and use the `inherits` function to DRY up your code.
 
 * Write more tests! You'll find some simple tests in the `test` sub-directory. Once you have all the tests passing, try adding a couple more for edge cases. For example:
+  * What happens if you try to add a tenant to a unit that's not available?
+  * What if a tenant tries to move in without any references?
 
 ## Getting Started
 
@@ -33,9 +35,9 @@
 
 2. Change directories into `apartment-oop`, and run `npm install` in your Terminal. This installs the testing modules (`mocha` and `chai`) locally into your project repo.
 
-3. Instructions for implementing each module are in their respective files, so poke around in `person.js`, `manager.js`, `tenant.js`, `property.js`, `ApartmentBuilding.js`, and `unit.js`. Read the comments to guide your implementation.
+3. Instructions for implementing each module are in their respective files, so poke around in `person.js`, `manager.js`, `tenant.js`, `apartment.js`, and `unit.js`. Read the comments to guide your implementation.
 
-### Playing In Console
+### Testing in Node REPL
 
 The `main.js` file is set up to allow you to test your models in the node REPL.
 
@@ -59,3 +61,8 @@ The `main.js` file is set up to allow you to test your models in the node REPL.
 
 * As you make code changes, frequently commit and push to GitHub.
 * Once you've finished the assignment and pushed your work to GitHub, make a pull request from your fork to the original repo.
+
+## Resources
+
+* <a href="https://mochajs.org" target="_blank">Mocha Docs</a>
+* <a href="http://chaijs.com/api/bdd" target="_blank">Chai Assertion Library</a>

@@ -7,6 +7,7 @@ function Manager(name, contact) {
   Person.call(this, name, contact);
 }
 
+// Manager inherits from Person
 Manager.prototype = new Person();
 Manager.prototype.constructor = Manager;
 
