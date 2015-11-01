@@ -1,12 +1,12 @@
-var Person = require("./person.js");
+var Person = require('./person');
 
 function Tenant(name, contact) {
-  // set this.name, and contact
   this.references = [];
-};
+  // set attributes (name, contact) using `this`
+}
 
-Tenant.prototype.addReference = function(reference){
-  // add reference to references
+Tenant.prototype.addReference = function(reference) {
+  // add reference (which is instance of `Person`) to tenant's references
 };
 
 module.exports = Tenant;

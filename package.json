@@ -1,23 +1,22 @@
 {
-  "name": "apartment_lab",
+  "name": "apartment-oop",
   "version": "0.0.1",
-  "description": "a lab for playing with constructors and prototypes in JS",
+  "description": "Practice JavaScript OOP and prototypal inheritance",
   "scripts": {
-    "test": "mocha test/ --reporter spec;  mocha /test/people;"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wdi-sf-july/apartment_lab.git"
+    "url": "https://github.com/sf-wdi-24/apartment-oop.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wdi-sf-july/apartment_lab/issues"
+    "url": "https://github.com/sf-wdi-24/apartment-oop/issues"
   },
-  "homepage": "https://github.com/wdi-sf-july/apartment_lab",
+  "homepage": "https://github.com/sf-wdi-24/apartment-oop",
   "dependencies": {
     "chai": "^1.9.1",
-    "mocha": "^1.20.1",
-    "sync-prompt": "^0.4.1"
+    "mocha": "^1.20.1"
   }
 }

@@ -1,11 +1,10 @@
-function Unit (number, building, sqft, rent) {
-  // set params above using this
+function Unit(number, building, sqft, rent) {
   this.tenant = null;
+  // set properties using `this`
 }
 
-Unit.prototype.available = function(){
-  // check for tenant
-}
+Unit.prototype.available = function() {
+  // return true if no tenant, false if tenant
+};
 
-
-
+module.exports = Unit;

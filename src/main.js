@@ -1,31 +1,30 @@
-var Person = require('./people/person.js'),
-  Manager = require('./people/manager'),
-  Tenant = require('./people/tenant');
+var Person = require('./people/person'),
+    Manager = require('./people/manager'),
+    Tenant = require('./people/tenant');
 
-var Property = require('./property_types/property'),
-  Duplex = require('./property_types/duplex.js'),
-  ApartmentBuilding = require('./property_types/apartment_building.js'), 
-  TownHouse = require('./property_types/town_house.js');
+var Property = require('./propertyTypes/property'),
+    ApartmentBuilding = require('./propertyTypes/apartmentBuilding'),
+    Duplex = require('./propertyTypes/duplex'),
+    TownHouse = require('./propertyTypes/townHouse');
 
-var Unit = require('./unit.js');
+var Unit = require('./unit');
 
-// start our apartment module to export later
+// start apartment module to export later
 var App = {};
 
-// Add our types of people to our 
-// module
+// add people to apartment module
 App.Person = Person;
 App.Manager = Manager;
 App.Tenant = Tenant;
 
-// Add our types of properties
-// to our module
+// add properties to apartment module
 App.Property = Property;
+App.ApartmentBuilding = ApartmentBuilding;
 App.Duplex = Duplex;
 App.TownHouse = TownHouse;
-App.ApartmentBuilding = ApartmentBuilding;
 
-// Export our unit
+// add unit to apartment module
 App.Unit = Unit;
 
+// export apartment module
 module.exports = App;

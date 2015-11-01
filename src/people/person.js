@@ -1,8 +1,5 @@
-function Person(name, contact){
-  this.name = name;
-  this.contact = contact;
-};
-
-
+function Person(name, contact) {
+  // set properties using `this`
+}
 
 module.exports = Person;
