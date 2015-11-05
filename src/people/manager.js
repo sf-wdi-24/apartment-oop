@@ -18,9 +18,17 @@ Manager.prototype.constructor = Manager;
 
 Manager.prototype.addApartment = function(apartment) {
   // add apartment to manager's apartments
-
+  return this.apartments.push(apartment);
 };
 
 Manager.prototype.removeApartment = function(apartment) {
-  // remove apartment from manager's apartments
+  var removeThis = this.apartments.indexOf(apartment);
+  if (removeThis > -1) {
+  	this.apartments.splice(removeThis, 1);
+  };
 };
+
+var mrMan = new Manager('mrMan', 123-432-2412);
+console.log(mrMan.addApartment('NewApt'));
+console.log(mrMan.removeApartment('NewApt'));
+console.log(mrMan.apartments);
