@@ -1,6 +1,8 @@
 function Manager(name, contact) {
   this.apartments = [];
   // set attributes (name, contact) using `this`
+  this.name = name;
+  this.contact = contact;
 }
 
 module.exports = Manager;
