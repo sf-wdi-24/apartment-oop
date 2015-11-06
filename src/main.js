@@ -1,9 +1,9 @@
 var Person = require('./people/person'),
-    Manager = require('./people/manager'),
-    Tenant = require('./people/tenant');
+	Manager = require('./people/manager'),
+	Tenant = require('./people/tenant');
 
 var Apartment = require('./apartment'),
-    Unit = require('./unit');
+	Unit = require('./unit');
 
 // start module for app to export later
 var App = {};
