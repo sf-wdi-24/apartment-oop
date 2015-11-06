@@ -14,6 +14,7 @@ describe('Apartment', function() {
 
   var bob = new Manager('Bob Brannan', '555-555-555'),
       jane = new Tenant('Jane Davis', '555-555-555'),
+      frank = new Tenant('Frank Fry', '555-555-555'),
       jill = new Person('Jill Taylor', '555-555-5555'),
       carl = new Person('Carl Jones', '555-555-5555');
 
@@ -35,6 +36,12 @@ describe('Apartment', function() {
       jane.addReference(jill);
       jane.addReference(carl);
       terraces.addTenant(unit1, jane);
+      expect(unit1.tenant).to.eql(jane);
+    });
+    it ('should not rent to unavailable unit', function() {
+      frank.addReference(jill);
+      frank.addReference(carl);
+      terraces.addTenant(unit1, frank);
       expect(unit1.tenant).to.eql(jane);
     });
   });

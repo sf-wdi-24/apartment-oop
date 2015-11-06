@@ -1,5 +1,6 @@
 var expect = require('chai').expect,
     Manager = require('./../../src/people/manager'),
+    Person = require('./../../src/people/person'),
     Apartment = require('./../../src/apartment');
 
 describe('Manager', function() {
@@ -9,6 +10,12 @@ describe('Manager', function() {
   it ('should initially have no apartments', function() {
     expect(bob.apartments).to.eql([]);
   });
+
+  // not sure why this won't work??
+  
+  // it ('should be a person', function() {
+  //   expect(bob).to.be.a(Person);
+  // });
 
   describe('#addApartment', function() {
     it ('should add new apartment', function() {
