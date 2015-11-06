@@ -28,7 +28,11 @@ Manager.prototype.removeApartment = function(apartment) {
   };
 };
 
-var mrMan = new Manager('mrMan', 123-432-2412);
-console.log(mrMan.addApartment('NewApt'));
-console.log(mrMan.removeApartment('NewApt'));
-console.log(mrMan.apartments);
+//testing to see if the methods work
+
+// var mrMan = new Manager('mrMan', 123-432-2412);
+// console.log(mrMan.addApartment('NewApt'));
+// console.log(mrMan.addApartment('OldApt'));
+// console.log(mrMan.removeApartment('NewApt'));
+// console.log(mrMan.apartments);
+

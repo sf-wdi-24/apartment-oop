@@ -13,9 +13,20 @@ Tenant.prototype.constructor = Tenant;
 
 Tenant.prototype.addReference = function(reference) {
   // add reference (which is instance of `Person`) to tenant's references
-  reference = new Person();//pretty sure this isnt right.will come back to it.
-  this.references.push(this.reference);
-
+  //reference needs to be created already
+  return this.references.push(reference);
 };
 
+//i think this works
+
+// var tenant1 = new Tenant('bob', 123-324-2132);
+// var tenant2 = new Tenant('bobert', 232-233-2123);
+// var tenant3 = new Tenant('ricky', 213-2313-21312)
+
+//
+// tenant1.addReference(tenant2);
+// tenant2.addReference(tenant1);
+// console.log(tenant1.references);
+
 module.exports = Tenant;
+
