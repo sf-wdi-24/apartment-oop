@@ -9,9 +9,7 @@ function Unit(number, building, sqft, rent) {
 
 Unit.prototype.available = function() {
   // return true if no tenant, false if tenant
-  console.log("null?: " + this.tenant);
-  console.log(this.tentant === null);
-  if(this.tentant === null) {
+  if(this.tenant === null) {
 	  return true;
   } else {
     return false;
