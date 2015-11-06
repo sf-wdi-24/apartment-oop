@@ -13,8 +13,7 @@ var Person = require('./person'),
 
 // Manager inherits from Person
 var inherits = require('./../inherits');
-Manager.prototype = new Person();
-Manager.prototype.constructor = Manager;
+inherits(Manager, Person);
 
 Manager.prototype.addApartment = function(apartment) {
   // add apartment to this manager's apartments
