@@ -1,6 +1,7 @@
 var Person = require('./people/person'),
     Manager = require('./people/manager'),
     Tenant = require('./people/tenant');
+    Inherits = require('./inherits');
 
 var Apartment = require('./apartment'),
     Unit = require('./unit');

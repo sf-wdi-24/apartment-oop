@@ -17,4 +17,13 @@ describe('Tenant', function() {
     });
   });
 
+  //new test for remove a reference
+
+  describe('#removeReference', function() {
+    it ('should remove the given reference', function() {
+      jane.removeReference(jill);
+      expect(jane.references).to.eql([]);
+    });
+  });
+
 });
