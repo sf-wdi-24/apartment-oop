@@ -29,12 +29,12 @@ Apartment.prototype.getManager = function() {
 Apartment.prototype.addTenant = function(unit, tenant) {
   // if apartment has a manager and tenant has 2 references
   // add tenant to unit
-  ref = tenant.references
-  if (this.manager !== null && (ref.length >= 2)){
+  var ref = tenant.references.length >= 2;
+  var available = this.units.indexOf(unit) > -1 && unit.available();
+  if (this.manager && ref && available){
     unit.tenant = tenant;
-    return this.units.push(tenant);
   }else {
-    this.units.push('more references please')
+    this.units.push('sorry can\'t add you');
   }
 };
 
@@ -47,13 +47,26 @@ Apartment.prototype.removeTenant = function(unit, tenant) {
   }
 };
 
-Apartment.prototype.availableUnits = function() {
+Apartment.prototype.availableUnits = function(unit) {
   // return num of available units
+  var avaiableUnits = 0;
+  this.units.forEach(function(unit){
+    if(unit.available) {
+      avaiableUnits++;
+    }
+  });
+  return avaiableUnits;
 };
 
 Apartment.prototype.rentedUnits = function() {
   // return num of rented units
-  return this.units.length;
+  var rented = 0;
+  this.units.forEach(function(unit){
+    if (!unit.available) {
+      rented++;
+    }
+  });
+  return rented;
 };
 
 
