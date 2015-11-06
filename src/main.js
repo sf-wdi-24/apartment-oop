@@ -19,3 +19,6 @@ App.Unit = Unit;
 
 // export apartment module
 module.exports = App;
+
+
+//run npm test to actually run the test 
