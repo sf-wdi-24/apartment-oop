@@ -47,7 +47,7 @@ Apartment.prototype.removeTenant = function(unit, tenant) {
   }
 };
 
-Apartment.prototype.availableUnits = function(unit) {
+Apartment.prototype.availableUnits = function() {
   // return num of available units
   var avaiableUnits = 0;
   this.units.forEach(function(unit){

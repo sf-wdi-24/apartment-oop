@@ -14,7 +14,9 @@ Tenant.prototype.constructor = Tenant;
 Tenant.prototype.addReference = function(reference) {
   // add reference (which is instance of `Person`) to tenant's references
   //reference needs to be created already
-  return this.references.push(reference);
+  if(reference instanceof Person){
+  	return this.references.push(reference);
+  }
 };
 
 //i think this works
