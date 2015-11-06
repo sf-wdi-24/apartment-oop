@@ -12,10 +12,12 @@ var App = {};
 App.Person = Person;
 App.Manager = Manager;
 App.Tenant = Tenant;
+App.People = People;
 
 // add properties to module
 App.Apartment = Apartment;
 App.Unit = Unit;
+App.Properties = Properties 
 
 // export apartment module
 module.exports = App;
